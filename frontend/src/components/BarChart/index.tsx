@@ -26,7 +26,7 @@ const BarChart = () => {
         series: [
             {
                 name: "",
-                data: []
+                data: []                   
             }
         ]
     });
@@ -40,34 +40,34 @@ const BarChart = () => {
 
                 setChartData({
                     labels: {
-                    categories: myLabels
-                },
+                        categories: myLabels
+                    },
                     series: [
-                    {
-                        name: "% Success",
-                        data: mySeries
-                    }
-                ]
+                        {
+                            name: "% Success",
+                            data: mySeries                   
+                        }
+                    ]
+                });
             });
-    });
-}, []);
+    }, []);
 
-const options = {
-    plotOptions: {
-        bar: {
-            horizontal: true,
-        }
-    },
-};
+    const options = {
+        plotOptions: {
+            bar: {
+                horizontal: true,
+            }
+        },
+    };
 
-return (
-    <Chart
-        options={{ ...options, xaxis: chartData.labels }}
-        series={chartData.series}
-        type="bar"
-        height="240"
-    />
-);
+    return (
+       <Chart  
+            options={{ ...options, xaxis: chartData.labels}}
+            series={chartData.series}
+            type="bar"
+            height="240"
+       />
+    );
 }
 
 export default BarChart;
